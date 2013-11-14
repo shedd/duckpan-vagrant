@@ -38,5 +38,6 @@ Vagrant.configure("2") do |config|
   end
 
   # setup synced folder for the DDG code: "local host machine path", "path on guest vm"
+  # NOTE: If you change the guest VM path from /code edit the find command in duckpan.sh
   config.vm.synced_folder CUSTOM_CONFIG['DDG_PATH'], "/code"
 end

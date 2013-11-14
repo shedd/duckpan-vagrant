@@ -14,8 +14,21 @@ This project provides a Vagrant-based development setup for DuckPAN.
 
 5. Run `vagrant up`
 
-The box takes some time to stand up.
+The box takes some time to stand up. Refer to [Troubleshooting](#Troubleshooting) for more info.
 
 ### Usage
 
 You can find the usage instructions for DuckPAN here: https://github.com/duckduckgo/p5-app-duckpan#using-duckpan
+
+### Troubleshooting
+
+#### Slow Chef Run
+
+The Chef run may take a while to complete, and during this process, you may see no output from vagrant.
+
+You can ssh into the box and run top to verify installation is still occurring. Look for either the chef-solo or perl processes.
+
+```sh
+vagrant ssh
+top
+```

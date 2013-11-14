@@ -1,0 +1,28 @@
+{
+  "sources": {
+    "build-essential": {
+      "locked_version": "1.4.2"
+    },
+    "git": {
+      "locked_version": "2.7.0"
+    },
+    "perl": {
+      "locked_version": "1.2.0"
+    },
+    "dmg": {
+      "locked_version": "2.0.8"
+    },
+    "yum": {
+      "locked_version": "2.4.2"
+    },
+    "windows": {
+      "locked_version": "1.11.0"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    },
+    "runit": {
+      "locked_version": "1.4.0"
+    }
+  }
+}

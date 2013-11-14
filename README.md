@@ -1,4 +1,4 @@
-DuckPAN (https://github.com/duckduckgo/p5-app-duckpan) is an application built to provide developers a testing environment for DuckDuckHack Instant Answers (http://duckduckhack.com). It allows you to test instant answer triggers and preview their visual design and output.
+[DuckPAN](https://github.com/duckduckgo/p5-app-duckpan) is an application built to provide developers a testing environment for [DuckDuckHack Instant Answers](http://duckduckhack.com). It allows you to test instant answer triggers and preview their visual design and output.
 
 This project provides a Vagrant-based development setup for DuckPAN.
 

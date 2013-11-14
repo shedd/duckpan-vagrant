@@ -12,10 +12,23 @@ This project provides a Vagrant-based development setup for DuckPAN.
 
 4. Run `vagrant up`
 
-The box takes some time to stand up.  As the duckpan-install script runs, you won't see any output for a few minutes.  On my 2.7 i7 Macbook Pro, it takes 18 minutes to complete.
+The box takes some time to stand up.  As the duckpan-install script runs, you won't see any output for a few minutes.  On my 2.7 i7 Macbook Pro, it takes 18 minutes to complete.  Refer to [Troubleshooting](#Troubleshooting) for more info.
 
 ### Usage
 
 You can find the usage instructions for DuckPAN here: https://github.com/duckduckgo/p5-app-duckpan#using-duckpan
 
 By default, after starting `duckpan server` you can access the web interface at http://0.0.0.0:5000
+
+### Troubleshooting
+
+#### Slow Chef Run
+
+The Chef run may take a while to complete, and during this process, you may see no output from vagrant.
+
+You can ssh into the box and run top to verify installation is still occurring. Look for either the chef-solo or perl processes.
+
+```sh
+vagrant ssh
+top
+```

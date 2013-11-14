@@ -14,7 +14,7 @@ This project provides a Vagrant-based development setup for DuckPAN.
 
 5. Run `vagrant up`
 
-The box takes some time to stand up. Refer to [Troubleshooting](#Troubleshooting) for more info.
+The box takes some time to stand up. Refer to [Troubleshooting](#troubleshooting) for more info.
 
 ### Usage
 

@@ -4,11 +4,11 @@ This project provides a Vagrant-based development setup for DuckPAN.
 
 ### Installation
 
-1. Install Vagrant: http://docs.vagrantup.com/v2/installation/index.html
+1. Install [Vagrant](http://docs.vagrantup.com/v2/installation/index.html)
 
 2. Clone this repo
 
-3. By default, Vagrant will load a VirtualBox Precise64 (http://files.vagrantup.com/precise64.box) machine image.  If you change this, DuckDuckGo recommends Ubuntu (https://github.com/duckduckgo/p5-app-duckpan#disclaimer).
+3. By default, Vagrant will load a [VirtualBox Precise64](http://files.vagrantup.com/precise64.box) machine image.  Note that DuckDuckGo recommends Ubuntu (https://github.com/duckduckgo/p5-app-duckpan#disclaimer).
 
 4. You will also want to customize the value of the synced directory to point to your local directory containing the DuckDuckGo code you wish to test.
 

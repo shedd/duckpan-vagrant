@@ -19,3 +19,5 @@ The box takes some time to stand up.
 ### Usage
 
 You can find the usage instructions for DuckPAN here: https://github.com/duckduckgo/p5-app-duckpan#using-duckpan
+
+By default, after starting `duckpan server` you can access the web interface at http://0.0.0.0:5000

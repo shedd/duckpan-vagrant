@@ -4,7 +4,7 @@
 CUSTOM_CONFIG = {
                   "BOX_NAME"  =>  "precise64", 
                   "BOX_URL"   =>  "http://files.vagrantup.com/precise64.box", 
-                  "HEADLESS"  =>  "false", 
+                  "HEADLESS"  =>  false, 
                   "DDG_PATH"  =>  "/Users/shedd/Dropbox/App_Xray/DuckDuckGo/repos"
                 }
 

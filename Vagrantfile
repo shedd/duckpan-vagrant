@@ -2,7 +2,6 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-
   # Change this to the name of your Vagrant base box.
   config.vm.box = "precise64"
 
@@ -31,4 +30,6 @@ Vagrant.configure("2") do |config|
     chef.add_recipe 'duckpan'
   end
 
+  # setup synced folder for the DDG code: "local host machine path", "path on guest vm"
+  config.vm.synced_folder "~/DuckDuckGo/repos", "/code"
 end

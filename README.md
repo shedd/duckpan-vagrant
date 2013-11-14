@@ -1,14 +1,21 @@
-This project provides a Vagrant-based development setup for DuckDuckGo.
-(See http://duckduckhack.com for more info on that.)
+DuckPAN (https://github.com/duckduckgo/p5-app-duckpan) is an application built to provide developers a testing environment for DuckDuckHack Instant Answers (http://duckduckhack.com). It allows you to test instant answer triggers and preview their visual design and output.
 
-This will attempt to load a VirtualBox Precise64 (http://files.vagrantup.com/precise64.box) machine image.  You can modify this in `Vagrantfile`.
+This project provides a Vagrant-based development setup for DuckPAN.
 
 ### Installation
 
-1. Clone the repo
-2. Install Vagrant: http://docs.vagrantup.com/v2/installation/index.html
-3. Run `vagrant up`
+1. Install Vagrant: http://docs.vagrantup.com/v2/installation/index.html
+
+2. Clone the repo
+
+3. By default, Vagrant will load a VirtualBox Precise64 (http://files.vagrantup.com/precise64.box) machine image.  If you change this, DuckDuckGo recommends Ubuntu (https://github.com/duckduckgo/p5-app-duckpan#disclaimer).
+
+You will also want to customize the value of the synced directory to point to your local directory containing the DuckDuckGo code you wish to test.
+
+4. Run `vagrant up`
+
+The box takes some time to stand up.
 
 ### Usage
 
-The box takes some time to stand up.  Once it completes, you can follow the usage instructions here: https://github.com/duckduckgo/p5-app-duckpan#using-duckpan
+You can find the usage instructions for DuckPAN here: https://github.com/duckduckgo/p5-app-duckpan#using-duckpan

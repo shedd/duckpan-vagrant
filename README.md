@@ -16,7 +16,7 @@ vagrant plugin install vagrant-berkshelf
 
 4. Run `vagrant up`
 
-The box takes some time to stand up.  As the duckpan-install script runs, you won't see any output for a few minutes.  On my 2.7 i7 Macbook Pro, it takes 18 minutes to complete.  Refer to [Troubleshooting](#Troubleshooting) for more info.
+The box takes some time to stand up.  As the duckpan-install script runs, you won't see any output for a few minutes.  On my 2.7 Ghz i7 Macbook Pro, it takes 18 minutes to complete.  Refer to [Troubleshooting](#Troubleshooting) for more info.
 
 ### Usage
 

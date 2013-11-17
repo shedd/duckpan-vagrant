@@ -35,6 +35,9 @@ Vagrant.configure("2") do |config|
     chef.add_recipe 'apt'
     chef.add_recipe 'build-essential'
     chef.add_recipe 'duckpan'
+
+    # uncomment to run chef-solo in debug
+    #chef.arguments = '-l debug'
   end
 
   # setup synced folder for the DDG code: "local host machine path", "path on guest vm"

@@ -11,11 +11,13 @@ This project provides a Vagrant-based development setup for DuckPAN.
 
 2. Clone this repo
 
-3. Run `bundle install` to install Berkshelf.  Then run `vagrant plugin install vagrant-berkshelf`
+3. Run `bundle install` to install Berkshelf.  
 
-4. Review the CUSTOM_CONFIG settings at the top of Vagrant file.  You will want to customize the value of the synced directory to point to your local directory containing the DuckDuckGo code you wish to test.  By default, Vagrant will load a [VirtualBox Precise64](http://files.vagrantup.com/precise64.box) machine image.  If you change this, DuckDuckGo recommends Ubuntu (https://github.com/duckduckgo/p5-app-duckpan#disclaimer).
+4. Then run `vagrant plugin install vagrant-berkshelf`
 
-5. Run `vagrant up`
+5. Review the CUSTOM_CONFIG settings at the top of Vagrant file.  You will want to customize the value of the synced directory to point to your local directory containing the DuckDuckGo code you wish to test.  By default, Vagrant will load a [VirtualBox Precise64](http://files.vagrantup.com/precise64.box) machine image.  If you change this, DuckDuckGo recommends Ubuntu (https://github.com/duckduckgo/p5-app-duckpan#disclaimer).
+
+6. Run `vagrant up`
 
 The box takes some time to stand up.  As the duckpan-install script runs, you won't see any output for a few minutes.  On my 2.7 Ghz i7 Macbook Pro, it takes 18 minutes to complete.  Refer to [Troubleshooting](#Troubleshooting) for more info.
 

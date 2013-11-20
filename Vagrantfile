@@ -24,17 +24,17 @@ Vagrant.configure("2") do |config|
     vb.gui = CUSTOM_CONFIG['HEADLESS']
   end
 
-  # ran into problems with the perl package installation - apt-get update needed
-  config.vm.provision "shell", inline: "sudo apt-get update"
-  # make wasn't installed
-  config.vm.provision "shell", inline: "sudo apt-get -y install build-essential"
-
   # Enable provisioning with chef solo, using the included cookbooks.  The
   # duckpan::default recipe sets up some dependencies and calls the included
   # duckpan.sh shell script.
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = './cookbooks'
+    chef.add_recipe 'apt'
+    chef.add_recipe 'build-essential'
     chef.add_recipe 'duckpan'
+
+    # uncomment to run chef-solo in debug
+    #chef.arguments = '-l debug'
   end
 
   # setup synced folder for the DDG code: "local host machine path", "path on guest vm"

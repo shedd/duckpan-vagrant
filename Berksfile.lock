@@ -1,12 +1,12 @@
 {
   "sources": {
+    "apt": {
+      "locked_version": "2.3.0"
+    },
     "dmg": {
       "locked_version": "2.0.9",
       "git": "git://github.com/thomasmeeus/dmg.git",
       "ref": "03cf303258a60d92258ce54bf3be3f0342958993"
-    },
-    "apt": {
-      "locked_version": "2.3.0"
     },
     "build-essential": {
       "locked_version": "1.4.2"

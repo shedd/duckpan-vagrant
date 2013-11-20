@@ -1,0 +1,36 @@
+{
+  "sources": {
+    "apt": {
+      "locked_version": "2.3.0"
+    },
+    "dmg": {
+      "locked_version": "2.0.9",
+      "git": "git://github.com/thomasmeeus/dmg.git",
+      "ref": "03cf303258a60d92258ce54bf3be3f0342958993"
+    },
+    "build-essential": {
+      "locked_version": "1.4.2"
+    },
+    "git": {
+      "locked_version": "2.7.0"
+    },
+    "perl": {
+      "locked_version": "1.2.0"
+    },
+    "duckpan": {
+      "path": "./cookbooks/duckpan"
+    },
+    "yum": {
+      "locked_version": "2.4.2"
+    },
+    "windows": {
+      "locked_version": "1.11.0"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    },
+    "runit": {
+      "locked_version": "1.4.0"
+    }
+  }
+}

@@ -15,6 +15,9 @@ Vagrant.configure("2") do |config|
   # Change this to a URL from which the base box can be downloaded, if you like.
   config.vm.box_url = CUSTOM_CONFIG['BOX_URL']
 
+  # enable Berkshelf integration for Chef cookbook management
+  config.berkshelf.enabled = true
+
   # 'duckpan server' runs a development server on port 5000, so this forwards
   # that port to make it accessible.
   config.vm.network :forwarded_port, guest: 5000, host: 5000

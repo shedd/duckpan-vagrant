@@ -4,10 +4,7 @@ This project provides a Vagrant-based development setup for DuckPAN.
 
 ### Installation
 
-1. Install:
-
-* [Vagrant](http://docs.vagrantup.com/v2/installation/index.html)
-* [Bundler](http://bundler.io/#getting-started)
+1. Install: [Vagrant](http://docs.vagrantup.com/v2/installation/index.html) and [Bundler](http://bundler.io/#getting-started)
 
 2. Clone this repo
 

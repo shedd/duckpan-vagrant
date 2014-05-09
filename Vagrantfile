@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 CUSTOM_CONFIG = {
-                  "BOX_NAME"  =>  "duckduckhack", 
+                  "BOX_NAME"  =>  "precise64", 
                   "BOX_URL"   =>  "http://files.vagrantup.com/precise64.box", 
                   "HEADLESS"  =>  false, 
                   "DDG_PATH"  =>  "~/DuckDuckGo/repos"

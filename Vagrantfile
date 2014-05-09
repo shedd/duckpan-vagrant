@@ -2,13 +2,17 @@
 # vi: set ft=ruby :
 
 CUSTOM_CONFIG = {
-                  "BOX_NAME"  =>  "precise64", 
+                  "BOX_NAME"  =>  "duckduckhack", 
                   "BOX_URL"   =>  "http://files.vagrantup.com/precise64.box", 
                   "HEADLESS"  =>  false, 
                   "DDG_PATH"  =>  "~/DuckDuckGo/repos"
                 }
 
 Vagrant.configure("2") do |config|
+
+  # precise64 ships with chef 10, so we need to upgrade it.
+  config.omnibus.chef_version = :latest
+
   # Change this to the name of your Vagrant base box.
   config.vm.box = CUSTOM_CONFIG['BOX_NAME']
 

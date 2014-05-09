@@ -1,3 +1,5 @@
+source "https://api.berkshelf.com"
+
 cookbook 'apt'
 cookbook 'dmg'
 cookbook 'build-essential'

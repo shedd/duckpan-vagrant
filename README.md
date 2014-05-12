@@ -12,7 +12,7 @@ This project provides a Vagrant-based development setup for DuckPAN.
 
 4. Install the dependencies for vagrant-berkshelf. On Ubuntu, `sudo apt-get install build-essential autoconf`
 
-5. Run `vagrant plugin install vagrant-berkshelf --version '>= 2.0.1'`
+5. Run `vagrant plugin install vagrant-berkshelf --plugin-version=2.0.1`
 
 6. Run `vagrant plugin install vagrant-omnibus` so that Chef within the box can be upgraded to a version compatible with chef on the host OS.
 

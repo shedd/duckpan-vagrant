@@ -9,6 +9,10 @@ CUSTOM_CONFIG = {
                 }
 
 Vagrant.configure("2") do |config|
+
+  # precise64 ships with chef 10, so we need to upgrade it.
+  config.omnibus.chef_version = :latest
+
   # Change this to the name of your Vagrant base box.
   config.vm.box = CUSTOM_CONFIG['BOX_NAME']
 

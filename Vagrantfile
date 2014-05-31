@@ -2,15 +2,21 @@
 # vi: set ft=ruby :
 
 CUSTOM_CONFIG = {
-                  "BOX_NAME"  =>  "precise64", 
-                  "BOX_URL"   =>  "http://files.vagrantup.com/precise64.box", 
+                  "BOX_NAME"  =>  "precise64-current", 
+                # This box URL includes the latest bugfix & security patches.
+                # It curently ships with VirtualBox guest additions 4.1.12,
+                # and the raring HWE stack (kernel 3.8.)
+                  "BOX_URL"   =>  "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box",
                   "HEADLESS"  =>  false, 
                   "DDG_PATH"  =>  "~/DuckDuckGo/repos"
                 }
 
 Vagrant.configure("2") do |config|
 
-  # precise64 ships with chef 10, so we need to upgrade it.
+  # The cloud-images.ubuntu.com boxes ship without chef,
+  # so we need to install it.
+  # If you were using a files.vagrantup.com precise64 box instead,
+  # it ships with chef 10, so it needs to be upgraded with this same line.
   config.omnibus.chef_version = :latest
 
   # Change this to the name of your Vagrant base box.

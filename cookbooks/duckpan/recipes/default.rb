@@ -8,6 +8,9 @@ include_recipe 'git'
 
 execute "sudo apt-get -y install perl-doc"  # required by duckpan
 
+# This step is requried with the cloud-iamges.ubuntu.com boxes
+execute "sudo apt-get -y install libssl-dev"
+
 # download the duckpan install script
 execute "su -l vagrant -c 'wget -L http://duckpan.com/install.pl -O duckpan-install.pl'"
 

@@ -6,6 +6,12 @@
 include_recipe 'perl'
 include_recipe 'git'
 
+# cloud-images.ubuntu.com boxes have linux-headers-generic installed
+# (currently linux-headers-3.2.0-61-generic) installed, even though
+# the only kernel they have installed is linux-image-generic-lts-raring
+# Let's remove those headers to save space. (11.3 MB)
+execute "if ! dpkg-query --status linux-image-generic &> /dev/null; then sudo aptitude purge -y linux-headers-generic; fi"
+
 execute "sudo apt-get -y install perl-doc"  # required by duckpan
 
 # This step is requried with the cloud-iamges.ubuntu.com boxes

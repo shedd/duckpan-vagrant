@@ -12,6 +12,19 @@ include_recipe 'git'
 # Let's remove those headers to save space. (11.3 MB)
 execute "if ! dpkg-query --status linux-image-generic &> /dev/null; then sudo aptitude purge -y linux-headers-generic; fi"
 
+# Without this configuration, if a user resets the MAC address of the network
+# card (which is often done by users of VirtualBox), udev will rename eth0 to
+# eth1 and users will not have networking until they (boot to recovery mode and)
+# manually configure eth1.
+#
+# Reference: http://askubuntu.com/questions/240632/how-to-disable-udev-net-rule-generation
+file "/etc/udev/rules.d/70-persistent-net.rules" do
+  action :delete
+end
+file "/etc/udev/rules.d/75-persistent-net-generator.rules" do
+  content "# "
+end
+
 execute "sudo apt-get -y install perl-doc"  # required by duckpan
 
 # This step is requried with the cloud-iamges.ubuntu.com boxes

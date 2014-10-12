@@ -3,8 +3,26 @@
 # Recipe:: default
 #
 
-include_recipe 'perl'
 include_recipe 'git'
+
+
+execute "chown -R vagrant #{node[:perlbrew][:perlbrew_root]}"
+# The perlbrew homepage says to use .bash_profile, but that file does not exist
+# and despite what the bash manpage says, it is not sourced on the Ubuntu 12.04.
+# So use .bashrc instead.
+execute "echo \"source #{node[:perlbrew][:perlbrew_root]}/etc/bashrc\" >> ~vagrant/.bashrc" do
+  user "vagrant"
+end
+
+execute "echo \"source #{node[:perlbrew][:perlbrew_root]}/etc/bashrc\" >> /etc/skel/.bashrc"
+# The attribute ['perlbrew']['install_options'] = "--switch" does not seem to
+# work, so we call the switch subcommand manually.
+# You do need to source the .bashrc file to run the subswitch command;
+# calling the full filepath to perlbrew is not sufficient.
+execute "bash -l -i -c \"perlbrew switch #{node[:perlbrew][:perls][0]}\"" do
+  environment ({ "HOME" => "/home/vagrant" })
+  user "vagrant"
+end
 
 # cloud-images.ubuntu.com boxes have linux-headers-generic installed
 # (currently linux-headers-3.2.0-61-generic) installed, even though
@@ -25,31 +43,17 @@ file "/etc/udev/rules.d/75-persistent-net-generator.rules" do
   content "# "
 end
 
-execute "sudo apt-get -y install perl-doc"  # required by duckpan
-
-# This step is requried with the cloud-iamges.ubuntu.com boxes
+# This step is requried with the cloud-images.ubuntu.com boxes
 execute "sudo apt-get -y install libssl-dev"
 
 # download the duckpan install script
 execute "su -l vagrant -c 'wget -L http://duckpan.com/install.pl -O duckpan-install.pl'"
 
-# run the duckpan install script for the first time
-#   modifies .bashrc to set PERL environment variables
-#   installs local::lib and App::cpanminus
-execute "duckpan_install_first" do
-	# need to run command as user vagrant
-  command	"su -l vagrant -c 'perl duckpan-install.pl'"
-
-	# first run of duckpan-install.pl returns 1
-	# with error asking to re-login and rerun the script
-  returns 1
-end
-
-# run the duckpan script a second time
+# run the duckpan script
 #   installs App::DuckPAN
 execute "duckpan_install_again" do
-	# need to run command as user vagrant
+  # need to run command as user vagrant
   # only by invoking command through bash does .bashrc gets sourced properly
-  # .bashrc sets important PERL environment variables for duckpan
+  # .bashrc sets important PERL environment variables from perlbrew for duckpan
   command	"su -l vagrant -c 'bash -l -i -c \"perl duckpan-install.pl\"'"
 end

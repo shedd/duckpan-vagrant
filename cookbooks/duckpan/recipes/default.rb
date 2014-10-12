@@ -51,7 +51,7 @@ execute "su -l vagrant -c 'wget -L http://duckpan.com/install.pl -O duckpan-inst
 
 # run the duckpan script
 #   installs App::DuckPAN
-execute "duckpan_install_again" do
+execute "duckpan_install" do
   # need to run command as user vagrant
   # only by invoking command through bash does .bashrc gets sourced properly
   # .bashrc sets important PERL environment variables from perlbrew for duckpan

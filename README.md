@@ -20,7 +20,7 @@ This project provides a Vagrant-based development setup for DuckPAN.
 
 8. Run `vagrant up`
 
-The box takes some time to stand up.  As the duckpan-install script runs, you won't see any output for a few minutes.  On my 2.7 Ghz i7 Macbook Pro, it takes 18 minutes to complete.  Refer to [Troubleshooting](#Troubleshooting) for more info.
+The box takes some time to stand up.  As the duckpan-install script runs, you won't see any output for a few minutes.  On my 2.7 Ghz i7 Macbook Pro, it takes 18 minutes to complete.  Refer to [Troubleshooting](#troubleshooting) for more info.
 
 ### Workaround for Linux distros not supported by the ChefDK
 

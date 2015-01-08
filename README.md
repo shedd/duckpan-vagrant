@@ -10,7 +10,7 @@ This project provides a Vagrant-based development setup for DuckPAN.
 
 3. Install the OS dependencies for vagrant-berkshelf. On Ubuntu, `sudo apt-get install build-essential autoconf`
 
-4. Install the [ChefDK](https://downloads.chef.io/chef-dk/). If the ChefDK is unavailable for your Linux distro, follow the [Workaround for Linux distros not supported by the ChefDK](#chefdk-workaround) below.
+4. Install the [ChefDK](https://downloads.chef.io/chef-dk/). If the ChefDK is unavailable for your Linux distro, follow the [Workaround for Linux distros not supported by the ChefDK](#workaround-for-linux-distros-not-supported-by-the-chefdk) below.
 
 5. Run `vagrant plugin install vagrant-berkshelf`
 

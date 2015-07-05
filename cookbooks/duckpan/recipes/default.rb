@@ -47,7 +47,7 @@ end
 execute "sudo apt-get -y install libssl-dev"
 
 # download the duckpan install script
-execute "su -l vagrant -c 'wget -L http://duckpan.com/install.pl -O duckpan-install.pl'"
+execute "su -l vagrant -c 'wget -L http://duckpan.org/install.pl -O duckpan-install.pl'"
 
 # run the duckpan script
 #   installs App::DuckPAN

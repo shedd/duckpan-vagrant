@@ -56,4 +56,22 @@ execute "duckpan_install" do
   # only by invoking command through bash does .bashrc gets sourced properly
   # .bashrc sets important PERL environment variables from perlbrew for duckpan
   command	"su -l vagrant -c 'bash -l -i -c \"perl duckpan-install.pl\"'"
+# Workaround https://github.com/jonathanstowe/TermReadKey/issues/7
+# becausee we do not have an interactive terminal.
+# Can be removed once the version of Term::ReadKey after 2.33 is out.
+  returns [0,1]
+end
+
+# Workaround https://github.com/jonathanstowe/TermReadKey/issues/7
+# becausee we do not have an interactive terminal.
+# Can be removed once the version of Term::ReadKey after 2.33 is out.
+execute "TermReadKey_workaround" do
+  command "su -l vagrant -c 'bash -l -i -c \"cpanm Term::ReadKey@2.32\"'"
+end
+
+# Workaround https://github.com/jonathanstowe/TermReadKey/issues/7
+# becausee we do not have an interactive terminal.
+# Can be removed once the version of Term::ReadKey after 2.33 is out.
+execute "duckpan_install_2" do
+  command	"su -l vagrant -c 'bash -l -i -c \"perl duckpan-install.pl\"'"
 end

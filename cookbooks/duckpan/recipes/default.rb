@@ -36,8 +36,10 @@ execute "if ! dpkg-query --status linux-image-generic &> /dev/null; then sudo ap
 # manually configure eth1.
 #
 # Reference: http://askubuntu.com/questions/240632/how-to-disable-udev-net-rule-generation
-file "/etc/udev/rules.d/70-persistent-net.rules" do
-  action :delete
+if (File.file?("/etc/udev/rules.d/70-persistent-net.rules"))
+    file "/etc/udev/rules.d/70-persistent-net.rules" do
+      action :delete
+    end
 end
 file "/etc/udev/rules.d/75-persistent-net-generator.rules" do
   content "# "
